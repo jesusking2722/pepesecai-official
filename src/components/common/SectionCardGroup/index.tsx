@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { Link } from "react-router-dom";
 
 export type SectionCardItemType = {
   label: string;
@@ -15,14 +16,17 @@ const SectionCardGroup: FC<SectionCardGroupProps> = ({ items }) => {
   return (
     <>
       {items.map((item, index) => (
-        <div className="w-[250px]" key={index}>
+        <div
+          className="lg:w-[250px] xl:w-[250px] md:w-[120px] w-[120px]"
+          key={index}
+        >
           <div className="p-1 rounded-2xl border-2 border-[#9BD4E2] flex items-center justify-center">
-            <a
-              href={item.path ?? "#"}
+            <Link
+              to={item.path ?? "#"}
               className="text-[#9BD4E2] font-sans text-sm font-semibold"
             >
               {item.label}
-            </a>
+            </Link>
           </div>
           <div className="w-full rounded-xl">
             <img

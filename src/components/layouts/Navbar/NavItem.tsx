@@ -1,24 +1,18 @@
-const items: { label: string; path: string }[] = [
-  { label: "HOME", path: "/" },
-  { label: "ROADMAP", path: "/" },
-  { label: "TOKENOMICS", path: "/" },
-  { label: "STAKING", path: "/" },
-  { label: "SECURITY", path: "/security" },
-  { label: "WHITEPAPER", path: "/" },
-];
+import { Link } from "react-router-dom";
+import { NAV_ITEMS } from "../../../constant";
 
 const NavItem = () => {
   return (
-    <nav className="flex items-center justify-between">
+    <nav className="hidden lg:flex items-center justify-between">
       <ul className="flex flex-row items-center gap-4">
-        {items.map((item, index) => (
-          <li className="">
-            <a
-              href={item.path}
+        {NAV_ITEMS.map((item, index) => (
+          <li className="" key={index}>
+            <Link
+              to={item.path}
               className="font-bebas text-[#98D3E4] text-xl tracking-[0.1em] transition hover:text-[#48cbf3]"
             >
               {item.label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

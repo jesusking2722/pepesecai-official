@@ -45,11 +45,11 @@ const Button: FC<ButtonProps> = ({
       onClick={onClick}
     >
       {iconPosition === "left" && icon && (
-        <Icon icon={icon} className="text-[#9DD7E7]" />
+        <Icon icon={icon} className="text-[#9DD7E7] w-6 h-6" />
       )}
       <span className="mt-1">{label}</span>
       {iconPosition === "right" && icon && (
-        <Icon icon={icon} className="text-[#9DD7E7]" />
+        <Icon icon={icon} className="text-[#9DD7E7] w-6 h-6" />
       )}
     </button>
   );

@@ -1,4 +1,0 @@
-shade color : #36498b
-every font except footer and connect wallet : Bebas Neue
-footer font & connect wallet in the middle : Open Sans 
-LIVE CHART - leave window, later will connect it with our live chart 

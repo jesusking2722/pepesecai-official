@@ -1,3 +1,8 @@
 .neon-text {
   text-shadow: 0 0 2px #98d3e4, 0 0 4px #98d3e4, 0 0 6px #98d3e4;
 }
+
+.mainbar {
+  background: url("../public/assets/mainbar.svg");
+  background-size: cover;
+}
