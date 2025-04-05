@@ -8,7 +8,9 @@ const Security = () => {
   return (
     <div className="w-full flex flex-row items-center justify-between px-14 py-8">
       <div className="flex flex-col gap-8 items-end">
-        <h1 className="text-[#98D3E4] text-6xl font-semibold">SECURITY</h1>
+        <h1 className="text-[#98D3E4] text-6xl font-semibold neon-text">
+          SECURITY
+        </h1>
         <img
           src={BASE_URL + `/assets/security open source img.svg`}
           alt="anti bot"

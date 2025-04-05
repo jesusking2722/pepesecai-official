@@ -1,6 +1,5 @@
 import React from "react";
 import NavItem from "./NavItem";
-import { Link } from "react-router";
 import Button from "../../common/Button";
 
 const Navbar = () => {
@@ -8,7 +7,7 @@ const Navbar = () => {
     <header className="flex flex-row items-center justify-between py-3 px-10">
       <div className="flex flex-row items-center gap-10">
         <div className="">
-          <Link to="/" className="flex flex-row items-center gap-4">
+          <a href="/" className="flex flex-row items-center gap-4">
             <img
               src="./assets/logo.svg"
               alt="Logo"
@@ -17,7 +16,7 @@ const Navbar = () => {
             <h1 className="text-[#98D3E4] font-semibold text-2xl font-bebas tracking-[0.2em]">
               PEPESEC AI
             </h1>
-          </Link>
+          </a>
         </div>
         <NavItem />
       </div>
