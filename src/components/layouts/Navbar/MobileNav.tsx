@@ -2,6 +2,8 @@ import { motion, AnimatePresence } from "motion/react";
 import { NAV_ITEMS } from "../../../constant";
 import { Link } from "react-router-dom";
 import Button from "../../common/Button";
+import {useAppKit, useAppKitAccount} from "@reown/appkit/react";
+import {addressFormat} from "../../../utils";
 
 const MobileNav = ({
   isOpen,
@@ -10,6 +12,9 @@ const MobileNav = ({
   isOpen: boolean;
   onClose: (val: boolean) => void;
 }) => {
+  const {open} = useAppKit();
+  const {isConnected, address} = useAppKitAccount();
+
   return (
     <AnimatePresence mode="wait">
       {isOpen && (
@@ -38,9 +43,10 @@ const MobileNav = ({
             ))}
             <Button
               type="primary"
-              label="Connect wallet"
+              label={isConnected ? addressFormat(address?.toString() ?? '') : "Connect wallet"}
               icon="mdi:wallet"
               iconPosition="left"
+              onClick={() => {open()}}
             />
           </ul>
         </motion.nav>

@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 import { BASE_URL } from "../../../constant";
 import MobileNav from "./MobileNav";
 import { useState } from "react";
+import {useAppKit, useAppKitAccount} from "@reown/appkit/react";
+import {addressFormat} from "../../../utils";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const {open} = useAppKit();
+  const {isConnected, address} = useAppKitAccount();
 
   return (
     <header className="w-full py-3 px-10 border-b-2 border-[#98D3E4] bg-white/10 backdrop-blur-sm shadow-md shadow-[#73bdc7]">
@@ -36,13 +40,14 @@ const Navbar = () => {
           <div className="hidden xl:flex">
             <Button
               type="text"
-              label="Connect Wallet"
+              label={isConnected ? addressFormat(address?.toString() ?? '') : "Connect wallet"}
               icon="mdi:wallet"
               iconPosition="left"
+              onClick={() => {open()}}
             />
           </div>
           <div className="hidden 2xl:hidden xl:hidden lg:flex">
-            <Button type="text" icon="mdi:wallet" iconPosition="left" />
+            <Button type="text" icon="mdi:wallet" iconPosition="left" onClick={() => {open()}} />
           </div>
         </div>
       </div>
